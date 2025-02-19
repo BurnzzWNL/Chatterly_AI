@@ -1,0 +1,207 @@
+/* 🔹 General App Layout */
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #1a1a1a, #3b005f);
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+/* 🔹 Main Content Layout */
+.MainContainer {
+  display: flex;
+  margin-top: 70px;
+  height: calc(100vh - 70px);
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 🔹 Sidebar */
+.ChatSidebar {
+  width: 280px; /* Default expanded width */
+  background: linear-gradient(180deg, #2a2a2a, #3b005f);
+  color: white;
+  overflow-y: auto;
+  box-shadow: inset -4px 0 8px rgba(0, 0, 0, 0.6);
+  transition: width 0.3s ease-in-out;
+}
+
+/* 🔹 Collapsed Sidebar */
+.ChatSidebar.Collapsed {
+  width: 80px;
+}
+
+/* 🔹 Chat Area */
+.ChatContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #0d0d0d;
+  overflow-y: auto;
+  padding: 1rem;
+  color: #ffffff;
+  transition: margin-left 0.3s ease-in-out, background 0.3s ease-in-out;
+  margin-left: 280px; /* Default expanded margin */
+}
+
+/* 🔹 Adjust for Collapsed Sidebar */
+.ChatContainer.FullWidth {
+  margin-left: 80px;
+}
+
+/* 🔹 Scrollbar Styling */
+.ChatContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ChatContainer::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.ChatContainer::-webkit-scrollbar-thumb {
+  background: #4b0082;
+  border-radius: 4px;
+}
+
+.ChatContainer::-webkit-scrollbar-thumb:hover {
+  background: #6a0dad;
+}
+
+/* 🔹 Navbar */
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: linear-gradient(to right, #3b005f, #1a1a1a);
+  z-index: 1000;
+  color: white;
+  padding: 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  transition: background 0.3s ease-in-out;
+}
+
+.Navbar .Logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  box-shadow: 0 0 10px #9a4dff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Navbar .Logo:hover {
+  transform: scale(1.1);
+}
+
+.Navbar .Title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* 🔹 Right Section */
+.Navbar .RightSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* 🔹 Buttons */
+.AuthButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #6a0dad;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0px 4px 8px rgba(106, 13, 173, 0.5);
+}
+
+.AuthButton:hover {
+  background-color: #4b0082;
+  transform: scale(1.05);
+}
+
+/* 🔹 Scrollbar Styling */
+.MainContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.MainContainer::-webkit-scrollbar-thumb {
+  background: #4b0082;
+  border-radius: 4px;
+}
+
+.MainContainer::-webkit-scrollbar-thumb:hover {
+  background: #6a0dad;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 1024px) {
+  .ChatSidebar {
+    width: 80px;
+  }
+
+  .ChatContainer {
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Navbar {
+    padding: 0.5rem;
+  }
+
+  .Title {
+    font-size: 1.4rem;
+  }
+
+  .Logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .AuthButton {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* 🔹 Dark Mode Support */
+.dark-mode .App {
+  background: radial-gradient(circle at top, #121212, #3b005f);
+  color: #e0e0e0;
+}
+
+.dark-mode .Navbar {
+  background: linear-gradient(to right, #3b005f, #121212);
+}
+
+.dark-mode .ChatSidebar {
+  background: linear-gradient(180deg, #1a1a1a, #3b005f);
+}
+
+.dark-mode .ChatContainer {
+  background: #181818;
+}
+
+.dark-mode .AuthButton {
+  background-color: #9a4dff;
+}
+
+.dark-mode .AuthButton:hover {
+  background-color: #7a1bbf;
+}

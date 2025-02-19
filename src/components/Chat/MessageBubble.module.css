@@ -1,0 +1,86 @@
+/* 🔹 Common styles for message bubbles */
+.MessageBubble {
+  display: flex;
+  align-items: flex-start;
+  max-width: 80%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 12px;
+  font-size: 16px;
+  word-wrap: break-word;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for better visibility */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 🔹 Assistant messages (AI responses) */
+.AssistantBubble {
+  background-color: var(--assistant-bg, #2c3e50);
+  color: var(--assistant-text, #ecf0f1);
+  align-self: flex-start;
+  border-top-left-radius: 0;
+}
+
+/* 🔹 User messages */
+.UserBubble {
+  background-color: var(--user-bg, #007bff);
+  color: white;
+  align-self: flex-end;
+  border-top-right-radius: 0;
+}
+
+/* 🔹 Typing Indicator Animation */
+.TypingIndicator {
+  display: flex;
+  gap: 5px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.TypingDot {
+  width: 8px;
+  height: 8px;
+  background-color: gray;
+  border-radius: 50%;
+  animation: typingDots 1.5s infinite ease-in-out;
+}
+
+.TypingDot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.TypingDot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* 🔹 Fade-in effect for messages */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔹 Typing animation */
+@keyframes typingDots {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+  .MessageBubble {
+    max-width: 90%;
+    font-size: 15px;
+  }
+
+  .TypingDot {
+    width: 6px;
+    height: 6px;
+  }
+}

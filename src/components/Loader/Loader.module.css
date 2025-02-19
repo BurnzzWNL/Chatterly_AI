@@ -1,0 +1,83 @@
+/* 🔹 Loader Full-Screen Overlay */
+.LoaderWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+  backdrop-filter: blur(5px); /* Subtle blur effect */
+  z-index: 9999;
+}
+
+/* 🔹 Animated Loader */
+.Loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top: 5px solid var(--primary-color, #ffffff); /* White or theme color */
+  animation: spin 0.9s linear infinite;
+}
+
+/* 🔹 Loading Text */
+.LoaderText {
+  color: var(--text-color, #ffffff);
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeIn 1.5s ease-in-out infinite alternate;
+}
+
+/* 🔹 Keyframe Animations */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 🔹 Mobile Optimizations */
+@media (max-width: 768px) {
+  .Loader {
+    width: 40px;
+    height: 40px;
+    border-top: 4px solid var(--primary-color, #ffffff);
+  }
+
+  .LoaderText {
+    font-size: 0.9rem;
+  }
+}
+
+/* 🔹 Dark Mode Optimizations */
+@media (prefers-color-scheme: dark) {
+  .LoaderWrapper {
+    background: rgba(255, 255, 255, 0.1); /* Light tint for contrast */
+  }
+
+  .Loader {
+    border-top: 5px solid var(--accent-color, #007bff); /* Bright color for visibility */
+  }
+
+  .LoaderText {
+    color: var(--light-gray, #d1d1d1);
+  }
+}

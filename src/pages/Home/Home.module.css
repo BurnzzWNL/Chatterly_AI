@@ -1,0 +1,104 @@
+/* 🔹 Home Page Container */
+.Home {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--background-color);
+  color: var(--text-color);
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* ✅ Dark Mode Styles */
+.Home.DarkMode {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* 🔹 Main Layout (Sidebar + Chat) */
+.MainContainer {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 70px); /* Full height minus Navbar */
+  overflow: hidden;
+}
+
+/* 🔹 Chat Section */
+.ChatContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: var(--chat-bg);
+  overflow-y: auto;
+  transition: background 0.3s ease-in-out;
+}
+
+/* ✅ Dark Mode Chat Background */
+.DarkMode .ChatContainer {
+  background: var(--dark-chat-bg);
+}
+
+/* 🔹 Login Prompt */
+.LoginPrompt {
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-in-out;
+}
+
+/* ✅ Dark Mode Login Prompt */
+.DarkMode .LoginPrompt {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* 🔹 Login Title */
+.LoginPrompt h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* 🔹 Login Button */
+.LoginButton {
+  background: #3498db;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.LoginButton:hover {
+  background: #217dbb;
+}
+
+/* ✅ Dark Mode Login Button */
+.DarkMode .LoginButton {
+  background: #2980b9;
+}
+
+.DarkMode .LoginButton:hover {
+  background: #1c5980;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  .ChatContainer {
+    padding: 10px;
+  }
+
+  .LoginPrompt {
+    padding: 15px;
+  }
+
+  .LoginButton {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}

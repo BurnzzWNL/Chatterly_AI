@@ -1,0 +1,234 @@
+/* 🔹 Button Styles */
+.button {
+  background: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  font-size: 1rem;
+}
+
+.button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* 🔹 Dropdown Styles */
+.dropdown {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown:hover {
+  border-color: #007bff;
+}
+
+/* 🔹 Input Field Styles */
+.inputField {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.inputField:focus {
+  border-color: #007bff;
+  box-shadow: 0px 0px 6px rgba(0, 123, 255, 0.5);
+}
+
+/* 🔹 Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modalContent {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.modalOverlay.open .modalContent {
+  transform: scale(1.05);
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.closeButton:hover {
+  color: red;
+}
+
+/* 🔹 Toggle Switch */
+.toggleSwitch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.toggleSwitch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 20px;
+  transition: background 0.3s ease-in-out;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+input:checked + .slider {
+  background-color: #007bff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* 🔹 Dark Mode Button */
+.darkModeButton {
+  background: #444;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.darkModeButton:hover {
+  background: #666;
+}
+
+/* 🔹 Dark Mode Styles */
+.dark-mode {
+  background: #1b2838;
+  color: #f1f1f1;
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.dark-mode .button {
+  background: #0d6efd;
+  color: white;
+}
+
+.dark-mode .button:hover {
+  background: #025ce2;
+}
+
+.dark-mode .dropdown {
+  background: #2c3e50;
+  color: white;
+  border-color: #555;
+}
+
+.dark-mode .inputField {
+  background: #2c3e50;
+  color: white;
+  border-color: #555;
+}
+
+.dark-mode .modalContent {
+  background: #1e272e;
+  color: white;
+}
+
+.dark-mode .slider {
+  background: #555;
+}
+
+.dark-mode input:checked + .slider {
+  background: #0d6efd;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  .button {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+
+  .dropdown {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .inputField {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .toggleSwitch {
+    width: 36px;
+    height: 18px;
+  }
+
+  .slider:before {
+    height: 14px;
+    width: 14px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(16px);
+  }
+}

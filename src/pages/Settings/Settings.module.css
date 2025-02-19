@@ -1,0 +1,116 @@
+/* 🔹 Settings Page Container */
+.settingsContainer {
+  padding: 20px;
+  background: #2c3e50;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🔹 Section Title */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* 🔹 Settings Panel */
+.settingsPanel {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.settingsPanel:hover {
+  transform: scale(1.02);
+}
+
+/* 🔹 Individual Option */
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  margin: 10px auto;
+  max-width: 400px;
+  transition: background 0.3s ease-in-out;
+}
+
+.option:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 Toggle Button */
+.toggleButton {
+  background: #3498db;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.toggleButton:hover {
+  background: #217dbb;
+  transform: scale(1.05);
+}
+
+/* 🔹 Logout Button */
+.logoutButton {
+  background: #e74c3c;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.logoutButton:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+}
+
+/* 🔹 Buttons Inside Settings Panel */
+.settingsPanel button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* 🔹 Dark Mode Support */
+.dark-mode {
+  background: #1b2838;
+  color: #f1f1f1;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 600px) {
+  .settingsPanel {
+    width: 95%;
+  }
+
+  .option {
+    flex-direction: column;
+    text-align: left;
+    padding: 10px;
+  }
+
+  .toggleButton,
+  .logoutButton {
+    width: 100%;
+    text-align: center;
+  }
+}

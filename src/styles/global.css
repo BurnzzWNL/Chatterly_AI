@@ -1,0 +1,178 @@
+/* 🔹 Universal Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* 🔹 Root Variables for Theming */
+:root {
+  --primary-color: #3498db; /* Blue Theme */
+  --secondary-color: #2c3e50; /* Dark Sidebar Background */
+  --text-color: #ecf0f1; /* Light Text */
+  --background-color: #1e272e; /* Main Background */
+  --error-color: #e74c3c; /* Error Red */
+  --success-color: #2ecc71; /* Success Green */
+  --border-color: rgba(255, 255, 255, 0.2); /* Border color */
+  --input-bg: rgba(255, 255, 255, 0.1);
+  --input-focus-bg: rgba(255, 255, 255, 0.2);
+  --border-radius: 8px;
+  --transition-duration: 0.3s; /* Consistent Transition Speed */
+}
+
+/* 🔹 Global Page Styling */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.6;
+  transition: background var(--transition-duration) ease-in-out, color var(--transition-duration) ease-in-out;
+}
+
+/* 🔹 Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2980b9;
+}
+
+/* 🔹 Buttons */
+button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background var(--transition-duration) ease-in-out;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+/* Disabled Button */
+button:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* 🔹 Input Fields */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-color);
+  transition: border-color var(--transition-duration) ease-in-out, background var(--transition-duration) ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  background: var(--input-focus-bg);
+}
+
+/* 🔹 Alerts */
+.alert {
+  padding: 10px 16px;
+  border-radius: var(--border-radius);
+  margin: 10px 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.alert-error {
+  background: var(--error-color);
+  color: white;
+}
+
+.alert-success {
+  background: var(--success-color);
+  color: white;
+}
+
+/* 🔹 Modal Styling */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--secondary-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+/* 🔹 Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+/* 🔹 Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  button {
+    background: #0066cc;
+  }
+
+  input,
+  textarea {
+    background: #1a1a1a;
+    border: 1px solid #444;
+  }
+
+  .modal {
+    background: #1b2838;
+  }
+
+  .modal-overlay {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* 🔹 Mobile Responsiveness */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 8px 14px;
+  }
+
+  .alert {
+    font-size: 14px;
+  }
+
+  .modal {
+    width: 90%;
+    padding: 15px;
+  }
+}

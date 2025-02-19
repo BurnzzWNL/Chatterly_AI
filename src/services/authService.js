@@ -3,9 +3,9 @@ import { auth, googleProvider, signInWithPopup, signOut } from "../services/fire
 /**
  * 🔹 Handle Google Login
  */
-export const handleLogin = async (setUser, setError) => {
+export const handleLogin = async (setUser, setMessages, setError) => {
   try {
-    setError(null);
+    setError(null); // Ensure setError is correctly handled
     const result = await signInWithPopup(auth, googleProvider);
     const user = result.user;
 
@@ -15,6 +15,9 @@ export const handleLogin = async (setUser, setError) => {
       displayName: user.displayName,
     });
 
+    // ✅ Clear previous chat messages on login
+    setMessages([]);
+
     // Store user details in localStorage for persistence
     localStorage.setItem("user", JSON.stringify(user));
   } catch (error) {
@@ -22,6 +25,7 @@ export const handleLogin = async (setUser, setError) => {
     setError("Login failed. Please try again.");
   }
 };
+
 
 
 /**
